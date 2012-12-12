@@ -14,11 +14,9 @@ fairly finger-friendly.
 It is also packaged as a dialog (`ColorMixerDialog`), a dialog-themed
 activity (`ColorMixerActivity`), and a preference (`ColorPreference`).
 
-This is distributed as an Android library project, following
-the conventions of [the Android Parcel Project](http://andparcel.com).
-You can download a ZIP file containing just the library project
-(sans sample code) from the Downloads section of this GitHub
-repository.
+This is distributed as an Android library project.
+You can [download a ZIP file containing just the library project](https://github.com/commonsguy/downloads)
+(sans sample code).
 
 Usage
 -----
