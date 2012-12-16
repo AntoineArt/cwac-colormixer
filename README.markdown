@@ -150,6 +150,7 @@ Do not ask for help via Twitter.
 
 Release Notes
 -------------
+v0.4.2: demonstrated better Android library project integration with layouts
 v0.4.1: fixed `ColorPreference` to work better on Honeycomb
 v0.4.0: converted to Android library project, added ColorMixerActivity
 
