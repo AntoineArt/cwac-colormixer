@@ -14,11 +14,9 @@ fairly finger-friendly.
 It is also packaged as a dialog (`ColorMixerDialog`), a dialog-themed
 activity (`ColorMixerActivity`), and a preference (`ColorPreference`).
 
-This is distributed as an Android library project, following
-the conventions of [the Android Parcel Project](http://andparcel.com).
-You can download a ZIP file containing just the library project
-(sans sample code) from the Downloads section of this GitHub
-repository.
+This is distributed as an Android library project.
+You can [download a ZIP file containing just the library project](https://github.com/commonsguy/downloads)
+(sans sample code).
 
 Usage
 -----
@@ -130,6 +128,11 @@ If you have questions regarding the use of this code, please post a question
 on [StackOverflow](http://stackoverflow.com/questions/ask) tagged with `commonsware` and `android`. Be sure to indicate
 what CWAC module you are having issues with, and be sure to include source code 
 and stack traces if you are encountering crashes.
+
+If you have encountered what is clearly a bug, please post an [issue](https://github.com/commonsguy/cwac-colormixer/issues). Be certain to include complete steps
+for reproducing the issue.
+
+Do not ask for help via Twitter.
 
 Release Notes
 -------------
