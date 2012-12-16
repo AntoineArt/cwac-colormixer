@@ -15,11 +15,10 @@
 package com.commonsware.cwac.colormixer;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.WindowManager;
 import android.view.View;
+import android.view.WindowManager;
 import com.commonsware.cwac.parcel.ParcelHelper;
 
 public class ColorMixerActivity extends Activity {

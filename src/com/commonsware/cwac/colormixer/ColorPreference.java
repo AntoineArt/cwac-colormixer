@@ -17,17 +17,10 @@ package com.commonsware.cwac.colormixer;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import com.commonsware.cwac.colormixer.ColorMixer;
 import com.commonsware.cwac.parcel.ParcelHelper;
-
 
 public class ColorPreference extends DialogPreference {
   private int lastColor=0;
