@@ -40,6 +40,20 @@ to register a `ColorMixer.OnColorChangedListener` object, which
 will be called with `onColorChanged()` when the color is altered
 by the user.
 
+There is one custom attribute, `color`, that you can use, to set
+the initial color (instead of using `setColor()`). To use this
+custom attribute, add the
+`xmlns:mixer="http://schemas.android.com/apk/res-auto"` namespace
+declaration to your layout, then add the `mixer:color` attribute
+to the `com.commonsware.cwac.colormixer.ColorMixer` widget:
+
+  <com.commonsware.cwac.colormixer.ColorMixer
+    android:id="@+id/mixer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    mixer:color="#FFFF00FF"
+  />
+
 ### ColorMixerDialog
 
 `ColorMixerDialog` is an `AlertDialog` subclass. Hence, to create
