@@ -15,8 +15,6 @@ It is also packaged as a dialog (`ColorMixerDialog`), a dialog-themed
 activity (`ColorMixerActivity`), and a preference (`ColorPreference`).
 
 This is distributed as an Android library project.
-You can [download a ZIP file containing just the library project](https://github.com/commonsguy/downloads)
-(sans sample code).
 
 Usage
 -----
@@ -116,12 +114,11 @@ specify in the XML.
 
 Dependencies
 ------------
-This depends upon the `cwac-parcel` library for accessing
-project-level resources.
+This project has no dependencies.
 
 Version
 -------
-This is version v0.4.1 of this module, meaning it is creeping
+This is version v0.4.3 of this module, meaning it is creeping
 towards respectability.
 
 Demo
@@ -150,6 +147,7 @@ Do not ask for help via Twitter.
 
 Release Notes
 -------------
+v0.4.3: removed `CWAC-Parcel` dependency
 v0.4.2: demonstrated better Android library project integration with layouts
 v0.4.1: fixed `ColorPreference` to work better on Honeycomb
 v0.4.0: converted to Android library project, added ColorMixerActivity
