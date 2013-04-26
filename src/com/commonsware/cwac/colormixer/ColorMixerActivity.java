@@ -1,5 +1,5 @@
 /***
-  Copyright (c) 2010 CommonsWare, LLC
+  Copyright (c) 2010-2013 CommonsWare, LLC
   
   Licensed under the Apache License, Version 2.0 (the "License"); you may
   not use this file except in compliance with the License. You may obtain
@@ -19,7 +19,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import com.commonsware.cwac.parcel.ParcelHelper;
 
 public class ColorMixerActivity extends Activity {
   public static final String COLOR="c";
@@ -33,10 +32,8 @@ public class ColorMixerActivity extends Activity {
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
                          WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
     
-    ParcelHelper parcel=new ParcelHelper("cwac-colormixer", this);
-    
-    setContentView(parcel.getLayoutId("activity"));
-    mixer=(ColorMixer)findViewById(parcel.getItemId("mixer"));
+    setContentView(R.layout.cwac_colormixer_activity);
+    mixer=(ColorMixer)findViewById(R.id.mixer);
     
     String title=getIntent().getStringExtra(TITLE);
     

@@ -1,5 +1,5 @@
 /***
-  Copyright (c) 2008-2010 CommonsWare, LLC
+  Copyright (c) 2008-2013 CommonsWare, LLC
   
   Licensed under the Apache License, Version 2.0 (the "License"); you may
   not use this file except in compliance with the License. You may obtain
@@ -24,12 +24,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
-import com.commonsware.cwac.parcel.ParcelHelper;
 
 public class ColorMixer extends RelativeLayout {
   private static final String SUPERSTATE="superState";
   private static final String COLOR="color";
-  private ParcelHelper parcel=null;
   private View swatch=null;
   private SeekBar red=null;
   private SeekBar blue=null;
@@ -74,34 +72,31 @@ public class ColorMixer extends RelativeLayout {
   }
   
   private void initMixer(AttributeSet attrs) {
-    parcel=new ParcelHelper("cwac-colormixer", getContext());
-    
     ((Activity)getContext())
-        .getLayoutInflater()
-        .inflate(parcel.getLayoutId("main"), this, true);
+    .getLayoutInflater()
+    .inflate(R.layout.cwac_colormixer_main, this, true);
     
-    swatch=findViewById(parcel.getItemId("swatch"));
+    swatch=findViewById(R.id.swatch);
         
-    red=(SeekBar)findViewById(parcel.getItemId("red"));
+    red=(SeekBar)findViewById(R.id.red);
     red.setMax(0xFF);
     red.setOnSeekBarChangeListener(onMix);
 
-    green=(SeekBar)findViewById(parcel.getItemId("green"));
+    green=(SeekBar)findViewById(R.id.green);
     green.setMax(0xFF);
     green.setOnSeekBarChangeListener(onMix);
 
-    blue=(SeekBar)findViewById(parcel.getItemId("blue"));
+    blue=(SeekBar)findViewById(R.id.blue);
     blue.setMax(0xFF);
     blue.setOnSeekBarChangeListener(onMix);
     
     if (attrs!=null) {
-      int[] styleable=parcel.getStyleableArray("ColorMixer");
+      int[] styleable=R.styleable.ColorMixer;
       TypedArray a=getContext().obtainStyledAttributes(attrs,
                                                         styleable,
                                                         0, 0);
       
-      setColor(a.getInt(parcel.getStyleableId("ColorMixer",
-                                                 "color"),
+      setColor(a.getInt(R.styleable.ColorMixer_color,
                         0xFFA4C639));
       a.recycle();
     }

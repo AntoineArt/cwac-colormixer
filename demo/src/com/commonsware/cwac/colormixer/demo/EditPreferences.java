@@ -1,4 +1,4 @@
-/* Copyright (c) 2008-2010 -- CommonsWare, LLC
+/* Copyright (c) 2008-2013 -- CommonsWare, LLC
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -15,10 +15,8 @@
    
 package com.commonsware.cwac.colormixer.demo;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-
 
 public class EditPreferences extends PreferenceActivity {
   @Override

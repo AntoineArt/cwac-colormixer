@@ -1,5 +1,5 @@
 /***
-  Copyright (c) 2008-2010 CommonsWare, LLC
+  Copyright (c) 2008-2013 CommonsWare, LLC
   
   Licensed under the Apache License, Version 2.0 (the "License"); you may
   not use this file except in compliance with the License. You may obtain
@@ -18,8 +18,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import com.commonsware.cwac.parcel.ParcelHelper;
-
 
 public class ColorMixerDialog extends AlertDialog
   implements DialogInterface.OnClickListener {
@@ -36,15 +34,13 @@ public class ColorMixerDialog extends AlertDialog
     this.initialColor=initialColor;
     this.onSet=onSet;
     
-    ParcelHelper parcel=new ParcelHelper("cwac-colormixer", ctxt);
-    
     mixer=new ColorMixer(ctxt);
     mixer.setColor(initialColor);
     
     setView(mixer);
-    setButton(ctxt.getText(parcel.getIdentifier("set", "string")),
+    setButton(ctxt.getText(R.string.cwac_colormixer_set),
               this);
-    setButton2(ctxt.getText(parcel.getIdentifier("cancel", "string")),
+    setButton2(ctxt.getText(R.string.cwac_colormixer_cancel),
                (DialogInterface.OnClickListener)null);
   }
   

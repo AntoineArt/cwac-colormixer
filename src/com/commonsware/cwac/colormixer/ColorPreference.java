@@ -1,5 +1,5 @@
 /***
-  Copyright (c) 2008-2010 CommonsWare, LLC
+  Copyright (c) 2008-2013 CommonsWare, LLC
   Portions Copyright (c) 2007 The Android Open Source Project
   
   Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -20,7 +20,6 @@ import android.content.res.TypedArray;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
-import com.commonsware.cwac.parcel.ParcelHelper;
 
 public class ColorPreference extends DialogPreference {
   private int lastColor=0;
@@ -29,10 +28,8 @@ public class ColorPreference extends DialogPreference {
   public ColorPreference(Context ctxt, AttributeSet attrs) {
     super(ctxt, attrs);
     
-    ParcelHelper parcel=new ParcelHelper("cwac-colormixer", ctxt);
-    
-    setPositiveButtonText(ctxt.getText(parcel.getIdentifier("set", "string")));
-    setNegativeButtonText(ctxt.getText(parcel.getIdentifier("cancel", "string")));
+    setPositiveButtonText(ctxt.getText(R.string.cwac_colormixer_set));
+    setNegativeButtonText(ctxt.getText(R.string.cwac_colormixer_cancel));
   }
 
   @Override
