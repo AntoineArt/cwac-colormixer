@@ -116,6 +116,9 @@ Dependencies
 ------------
 This project has no dependencies.
 
+This project should work on API Level 4 and higher &mdash; please report
+bugs if you find otherwise.
+
 Version
 -------
 This is version v0.4.3 of this module, meaning it is creeping
