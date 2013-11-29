@@ -170,11 +170,11 @@ Do not ask for help via Twitter.
 
 Release Notes
 -------------
-v0.5.0: added Gradle support
-v0.4.3: removed `CWAC-Parcel` dependency
-v0.4.2: demonstrated better Android library project integration with layouts
-v0.4.1: fixed `ColorPreference` to work better on Honeycomb
-v0.4.0: converted to Android library project, added ColorMixerActivity
+- v0.5.0: added Gradle support
+- v0.4.3: removed `CWAC-Parcel` dependency
+- v0.4.2: demonstrated better Android library project integration with layouts
+- v0.4.1: fixed `ColorPreference` to work better on Honeycomb
+- v0.4.0: converted to Android library project, added ColorMixerActivity
 
 Who Made This?
 --------------
