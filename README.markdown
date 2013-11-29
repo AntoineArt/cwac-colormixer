@@ -14,10 +14,27 @@ fairly finger-friendly.
 It is also packaged as a dialog (`ColorMixerDialog`), a dialog-themed
 activity (`ColorMixerActivity`), and a preference (`ColorPreference`).
 
-This is distributed as an Android library project.
+This is distributed as an Android library project. You can use it
+in source form or via an AAR.
 
 Usage
 -----
+
+### Obtaining the AAR
+
+Add the following blocks to your `build.gradle` file:
+
+```groovy
+repositories {
+    maven {
+        url "http://repo.commonsware.com"
+    }
+}
+
+dependencies {
+    compile 'com.commonsware.cwac.colormixer:colormixer:0.5'
+}
+```
 
 ### ColorMixer
 
@@ -121,14 +138,17 @@ bugs if you find otherwise.
 
 Version
 -------
-This is version v0.4.3 of this module, meaning it is creeping
+This is version v0.5.0 of this module, meaning it is creeping
 towards respectability.
 
 Demo
 ----
 There is a `demo/` directory containing a demo project. It uses
 the library project itself to access the source code and
-resources of the `ColorMixer` library.
+resources of the `ColorMixer` library. When built using Eclipse, it depends
+upon the library being located at `../colormixer` with respect to the
+demo project. When built using Gradle, it depends upon the AAR in the
+CommonsWare repo.
 
 License
 -------
@@ -150,6 +170,7 @@ Do not ask for help via Twitter.
 
 Release Notes
 -------------
+v0.5.0: added Gradle support
 v0.4.3: removed `CWAC-Parcel` dependency
 v0.4.2: demonstrated better Android library project integration with layouts
 v0.4.1: fixed `ColorPreference` to work better on Honeycomb
