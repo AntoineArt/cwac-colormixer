@@ -79,25 +79,32 @@
 	<!-- version-tag: custom -->
 	<import file="${sdk.dir}/tools/ant/build.xml" />
 
-	<target name="jar" depends="debug">
+	<target name="jar" depends="release">
 		<delete file="bin/CWAC-ColorMixer.jar" />
-		<jar destfile="bin/CWAC-ColorMixer.jar" basedir="bin/classes" excludes="**/BuildConfig.class **/R*.class" />
+    <jar destfile="bin/CWAC-ColorMixer.jar">
+      <fileset dir="bin/classes">
+        <exclude name="**/BuildConfig.class" />
+        <exclude name="**/R.class" />
+        <exclude name="**/R$*.class" />
+      </fileset>
+    </jar>
 	</target>
 
-	<target name="dist-lib" depends="jar">
-		<copy todir="/tmp/CWAC-ColorMixer/libs">
-			<fileset dir="libs/" />
-		</copy>
-		<copy todir="/tmp/CWAC-ColorMixer/res">
-			<fileset dir="res/" />
-		</copy>
-		<copy file="bin/CWAC-ColorMixer.jar" todir="/tmp/CWAC-ColorMixer/libs" />
-		<copy file="AndroidManifest.xml" todir="/tmp/CWAC-ColorMixer" />
-		<copy file="build.xml" todir="/tmp/CWAC-ColorMixer" />
-		<copy file="local.properties" todir="/tmp/CWAC-ColorMixer" />
-		<copy file="project.properties" todir="/tmp/CWAC-ColorMixer" />
-		<copy file="LICENSE" todir="/tmp/CWAC-ColorMixer" />
-		<mkdir dir="/tmp/CWAC-ColorMixer/src" />
+	<target name="dist" depends="jar">
+    <copy todir="/tmp/CWAC-ColorMixer/libs">
+      <fileset dir="libs/" />
+    </copy>
+    <copy todir="/tmp/CWAC-ColorMixer/res">
+      <fileset dir="res/" />
+    </copy>
+    <copy file="bin/CWAC-ColorMixer.jar" todir="/tmp/CWAC-ColorMixer/libs" />
+    <copy file="AndroidManifest.xml" todir="/tmp/CWAC-ColorMixer" />
+    <copy file="build.xml" todir="/tmp/CWAC-ColorMixer" />
+    <copy file="project.properties" todir="/tmp/CWAC-ColorMixer" />
+    <copy file="LICENSE" todir="/tmp/CWAC-ColorMixer" />
+    <mkdir dir="/tmp/CWAC-ColorMixer/src" />
+    <zip destfile="/tmp/CWAC-ColorMixer.zip" basedir="/tmp/" includes="CWAC-ColorMixer/**" whenempty="create" />
+    <delete dir="/tmp/CWAC-ColorMixer" />
 	</target>
 
 </project>
