@@ -11,12 +11,12 @@ apply plugin: 'android'
 
 repositories {
     maven {
-        url "http://repo.commonsware.com"
+        url "https://repo.commonsware.com.s3.amazonaws.com"
     }
 }
 
 dependencies {
-    compile 'com.commonsware.cwac.colormixer:colormixer:0.5'
+    compile 'com.commonsware.cwac:colormixer:0.5'
 }
 
 android {

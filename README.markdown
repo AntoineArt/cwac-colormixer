@@ -27,14 +27,16 @@ Add the following blocks to your `build.gradle` file:
 ```groovy
 repositories {
     maven {
-        url "http://repo.commonsware.com"
+        url "https://repo.commonsware.com.s3.amazonaws.com"
     }
 }
 
 dependencies {
-    compile 'com.commonsware.cwac.colormixer:colormixer:0.5'
+    compile 'com.commonsware.cwac:colormixer:0.5'
 }
 ```
+Or, if you cannot use SSL, use `http://repo.commonsware.com` for the repository
+URL.
 
 ### ColorMixer
 
