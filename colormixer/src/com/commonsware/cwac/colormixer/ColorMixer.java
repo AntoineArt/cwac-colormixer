@@ -10,7 +10,7 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
-*/
+ */
 
 package com.commonsware.cwac.colormixer;
 
@@ -21,6 +21,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
@@ -33,51 +34,58 @@ public class ColorMixer extends RelativeLayout {
   private SeekBar blue=null;
   private SeekBar green=null;
   private OnColorChangedListener listener=null;
-  
+
   public ColorMixer(Context context) {
     super(context);
-    
+
     initMixer(null);
   }
-  
+
   public ColorMixer(Context context, AttributeSet attrs) {
     super(context, attrs);
-    
+
     initMixer(attrs);
   }
-  
+
   public ColorMixer(Context context, AttributeSet attrs, int defStyle) {
     super(context, attrs, defStyle);
-    
+
     initMixer(attrs);
   }
-  
+
   public OnColorChangedListener getOnColorChangedListener() {
     return(listener);
   }
-  
+
   public void setOnColorChangedListener(OnColorChangedListener listener) {
     this.listener=listener;
   }
-  
+
   public int getColor() {
-    return(Color.argb(0xFF, red.getProgress(),
-                      green.getProgress(), blue.getProgress()));
+    return(Color.argb(0xFF, red.getProgress(), green.getProgress(),
+                      blue.getProgress()));
   }
-  
+
   public void setColor(int color) {
     red.setProgress(Color.red(color));
     green.setProgress(Color.green(color));
     blue.setProgress(Color.blue(color));
   }
-  
+
   private void initMixer(AttributeSet attrs) {
-    ((Activity)getContext())
-    .getLayoutInflater()
-    .inflate(R.layout.cwac_colormixer_main, this, true);
-    
+    LayoutInflater inflater=null;
+
+    if (getContext() instanceof Activity) {
+      inflater=((Activity)getContext()).getLayoutInflater();
+    }
+    else {
+      inflater=LayoutInflater.from(getContext());
+    }
+
+    inflater.inflate(R.layout.cwac_colormixer_main, this, true);
+
     swatch=findViewById(R.id.swatch);
-        
+
     red=(SeekBar)findViewById(R.id.red);
     red.setMax(0xFF);
     red.setOnSeekBarChangeListener(onMix);
@@ -89,23 +97,21 @@ public class ColorMixer extends RelativeLayout {
     blue=(SeekBar)findViewById(R.id.blue);
     blue.setMax(0xFF);
     blue.setOnSeekBarChangeListener(onMix);
-    
-    if (attrs!=null) {
+
+    if (attrs != null) {
       int[] styleable=R.styleable.ColorMixer;
-      TypedArray a=getContext().obtainStyledAttributes(attrs,
-                                                        styleable,
-                                                        0, 0);
-      
-      setColor(a.getInt(R.styleable.ColorMixer_color,
-                        0xFFA4C639));
+      TypedArray a=
+          getContext().obtainStyledAttributes(attrs, styleable, 0, 0);
+
+      setColor(a.getInt(R.styleable.ColorMixer_color, 0xFFA4C639));
       a.recycle();
     }
   }
-  
+
   @Override
   public Parcelable onSaveInstanceState() {
     Bundle state=new Bundle();
-    
+
     state.putParcelable(SUPERSTATE, super.onSaveInstanceState());
     state.putInt(COLOR, getColor());
 
@@ -115,33 +121,34 @@ public class ColorMixer extends RelativeLayout {
   @Override
   public void onRestoreInstanceState(Parcelable ss) {
     Bundle state=(Bundle)ss;
-    
+
     super.onRestoreInstanceState(state.getParcelable(SUPERSTATE));
 
     setColor(state.getInt(COLOR));
   }
-  
-  private SeekBar.OnSeekBarChangeListener onMix=new SeekBar.OnSeekBarChangeListener() {
-    public void onProgressChanged(SeekBar seekBar, int progress,
-                                  boolean fromUser) {
-      int color=getColor();
-      
-      swatch.setBackgroundColor(color);
-      
-      if (listener!=null) {
-        listener.onColorChange(color);
-      }
-    }
-    
-    public void onStartTrackingTouch(SeekBar seekBar) {
-      // unused
-    }
-    
-    public void onStopTrackingTouch(SeekBar seekBar) {
-      // unused
-    }
-  };
-  
+
+  private SeekBar.OnSeekBarChangeListener onMix=
+      new SeekBar.OnSeekBarChangeListener() {
+        public void onProgressChanged(SeekBar seekBar, int progress,
+                                      boolean fromUser) {
+          int color=getColor();
+
+          swatch.setBackgroundColor(color);
+
+          if (listener != null) {
+            listener.onColorChange(color);
+          }
+        }
+
+        public void onStartTrackingTouch(SeekBar seekBar) {
+          // unused
+        }
+
+        public void onStopTrackingTouch(SeekBar seekBar) {
+          // unused
+        }
+      };
+
   public interface OnColorChangedListener {
     public void onColorChange(int argb);
   }
