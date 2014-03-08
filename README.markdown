@@ -141,7 +141,7 @@ bugs if you find otherwise.
 
 Version
 -------
-This is version v0.5.1 of this module, meaning it is creeping
+This is version v0.5.2 of this module, meaning it is creeping
 towards respectability.
 
 Demo
@@ -173,6 +173,7 @@ Do not ask for help via Twitter.
 
 Release Notes
 -------------
+- v0.5.2: continued work to improve IDE preview panes
 - v0.5.1: bug fix to help with IDE preview panes
 - v0.5.0: added Gradle support
 - v0.4.3: removed `CWAC-Parcel` dependency

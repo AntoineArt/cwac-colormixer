@@ -73,6 +73,10 @@ public class ColorMixer extends RelativeLayout {
   }
 
   private void initMixer(AttributeSet attrs) {
+    if (isInEditMode()) {
+      return;
+    }
+    
     LayoutInflater inflater=null;
 
     if (getContext() instanceof Activity) {
