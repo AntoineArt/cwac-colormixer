@@ -141,7 +141,7 @@ bugs if you find otherwise.
 
 Version
 -------
-This is version v0.5.2 of this module, meaning it is creeping
+This is version v0.5.3 of this module, meaning it is creeping
 towards respectability.
 
 Demo
@@ -162,7 +162,8 @@ file.
 Questions
 ---------
 If you have questions regarding the use of this code, please post a question
-on [StackOverflow](http://stackoverflow.com/questions/ask) tagged with `commonsware` and `android`. Be sure to indicate
+on [StackOverflow](http://stackoverflow.com/questions/ask) tagged with
+`commonsware-cwac` and `android` after [searching to see if there already is an answer](https://stackoverflow.com/search?q=[commonsware-cwac]+colormixer). Be sure to indicate
 what CWAC module you are having issues with, and be sure to include source code 
 and stack traces if you are encountering crashes.
 
@@ -173,6 +174,7 @@ Do not ask for help via Twitter.
 
 Release Notes
 -------------
+- v0.5.3: manifest fixes to help with manifest merging
 - v0.5.2: continued work to improve IDE preview panes
 - v0.5.1: bug fix to help with IDE preview panes
 - v0.5.0: added Gradle support
