@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.commonsware.cwac:colormixer:0.5.+'
+    compile 'com.commonsware.cwac:colormixer:0.6.+'
 }
 ```
 
@@ -58,18 +58,18 @@ to register a `ColorMixer.OnColorChangedListener` object, which
 will be called with `onColorChanged()` when the color is altered
 by the user.
 
-There is one custom attribute, `color`, that you can use, to set
+There is one custom attribute, `cwac_colormixer_color`, that you can use, to set
 the initial color (instead of using `setColor()`). To use this
 custom attribute, add the
 `xmlns:mixer="http://schemas.android.com/apk/res-auto"` namespace
-declaration to your layout, then add the `mixer:color` attribute
+declaration to your layout, then add the `mixer:cwac_colormixer_color` attribute
 to the `com.commonsware.cwac.colormixer.ColorMixer` widget:
 
   <com.commonsware.cwac.colormixer.ColorMixer
     android:id="@+id/mixer"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    mixer:color="#FFFF00FF"
+    mixer:cwac_colormixer_color="#FFFF00FF"
   />
 
 ### ColorMixerDialog
@@ -141,8 +141,13 @@ bugs if you find otherwise.
 
 Version
 -------
-This is version v0.5.3 of this module, meaning it is creeping
+This is version v0.6.0 of this module, meaning it is creeping
 towards respectability.
+
+**NOTE**: To eliminate a collision on the attribute name with Android 5.0, users
+of v0.5.3 or older versions of this library will need to upgrade
+their layout XML to reference `cwac_colormixer_color` instead
+of just `color`.
 
 Demo
 ----
@@ -150,8 +155,9 @@ There is a `demo/` directory containing a demo project. It uses
 the library project itself to access the source code and
 resources of the `ColorMixer` library. When built using Eclipse, it depends
 upon the library being located at `../colormixer` with respect to the
-demo project. When built using Gradle, it depends upon the AAR in the
-CommonsWare repo.
+demo project. When built using Gradle/Android Studio, it uses the
+local `:colormixer` project for debug builds and the AAR artifact
+for release builds.
 
 License
 -------
@@ -174,6 +180,7 @@ Do not ask for help via Twitter.
 
 Release Notes
 -------------
+- v0.6.0: renamed attribute from `color` to `cwac_colormixer_color`, added more Gradle
 - v0.5.3: manifest fixes to help with manifest merging
 - v0.5.2: continued work to improve IDE preview panes
 - v0.5.1: bug fix to help with IDE preview panes

@@ -1,5 +1,5 @@
 <resources>
   <declare-styleable name="ColorMixer">
-    <attr name="color" format="color" />
+    <attr name="cwac_colormixer_color" format="color" />
   </declare-styleable>
 </resources>

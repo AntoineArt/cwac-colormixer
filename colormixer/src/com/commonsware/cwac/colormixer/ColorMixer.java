@@ -107,7 +107,7 @@ public class ColorMixer extends RelativeLayout {
       TypedArray a=
           getContext().obtainStyledAttributes(attrs, styleable, 0, 0);
 
-      setColor(a.getInt(R.styleable.ColorMixer_color, 0xFFA4C639));
+      setColor(a.getInt(R.styleable.ColorMixer_cwac_colormixer_color, 0xFFA4C639));
       a.recycle();
     }
   }
