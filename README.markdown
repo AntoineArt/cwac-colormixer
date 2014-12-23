@@ -180,6 +180,7 @@ Do not ask for help via Twitter.
 
 Release Notes
 -------------
+- v0.6.1: updated for Android Studio 1.0 and new AAR publishing system
 - v0.6.0: renamed attribute from `color` to `cwac_colormixer_color`, added more Gradle
 - v0.5.3: manifest fixes to help with manifest merging
 - v0.5.2: continued work to improve IDE preview panes

@@ -1,17 +1,4 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.github.dcendents:android-maven-plugin:1.2'
-    }
-}
-
-apply plugin: 'android-library'
-apply plugin: 'android-maven'
-
-version '0.6.0'
-group 'com.commonsware.cwac'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 14
@@ -30,6 +17,18 @@ android {
 
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
+    }
+}
+
+apply plugin: 'maven'
+ 
+uploadArchives {
+    repositories.mavenDeployer {
+        pom.groupId = PUBLISH_GROUP_ID
+        pom.artifactId = PUBLISH_ARTIFACT_ID
+        pom.version = PUBLISH_VERSION
+
+        repository(url: LOCAL_REPO)
     }
 }
 
