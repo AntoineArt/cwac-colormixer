@@ -175,6 +175,9 @@ and stack traces if you are encountering crashes.
 
 If you have encountered what is clearly a bug, please post an [issue](https://github.com/commonsguy/cwac-colormixer/issues). Be certain to include complete steps
 for reproducing the issue.
+The [contribution guidelines](CONTRIBUTING.md)
+provide some suggestions for how to create a bug report that will get
+the problem fixed the fastest.
 
 Do not ask for help via Twitter.
 
@@ -194,5 +197,3 @@ Release Notes
 Who Made This?
 --------------
 <a href="http://commonsware.com">![CommonsWare](http://commonsware.com/images/logo.png)</a>
-
-[gg]: http://groups.google.com/group/cw-android
