@@ -1,5 +1,8 @@
 CWAC ColorMixer: Appealing To Your Users' Sense of Fashion
 ==========================================================
+**NOTE: This library is discontinued.** There are [many color picker libraries](https://android-arsenal.com/tag/18)
+to choose from as alternatives.
+
 Sometimes, you want your users to pick a color. A simple
 approach is to give the user a fixed roster of a handful
 of colors -- easy, but limited. A fancy approach is to use
@@ -167,19 +170,7 @@ file.
 
 Questions
 ---------
-If you have questions regarding the use of this code, please post a question
-on [StackOverflow](http://stackoverflow.com/questions/ask) tagged with
-`commonsware-cwac` and `android` after [searching to see if there already is an answer](https://stackoverflow.com/search?q=[commonsware-cwac]+colormixer). Be sure to indicate
-what CWAC module you are having issues with, and be sure to include source code 
-and stack traces if you are encountering crashes.
-
-If you have encountered what is clearly a bug, please post an [issue](https://github.com/commonsguy/cwac-colormixer/issues). Be certain to include complete steps
-for reproducing the issue.
-The [contribution guidelines](CONTRIBUTING.md)
-provide some suggestions for how to create a bug report that will get
-the problem fixed the fastest.
-
-Do not ask for help via Twitter.
+**This library is no longer supported.**
 
 Release Notes
 -------------
