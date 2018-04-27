@@ -1,7 +1,7 @@
 CWAC ColorMixer: Appealing To Your Users' Sense of Fashion
 ==========================================================
 **NOTE: This library is discontinued.** There are [many color picker libraries](https://android-arsenal.com/tag/18)
-to choose from as alternatives.
+to choose from as alternatives. This repository will become inaccessible on or after 1 January 2019.
 
 Sometimes, you want your users to pick a color. A simple
 approach is to give the user a fixed roster of a handful
